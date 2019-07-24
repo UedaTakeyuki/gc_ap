@@ -1,5 +1,9 @@
+# https://elinux.org/RPI-Wireless-Hotspot
+
 # install hostapd_mac80211
 sudo apt-get install hostapd
+sudo sh -c "cp hostapd.conf > /etc/hostapd/"
+sudo sh -c "cp hostapd > /etc/default/"
 
 # install hostapd_r8188eu
 git clone https://github.com/PlantDaddy/hostapd-rtl8188.git /home/pi/hostapd-rt$
@@ -9,6 +13,7 @@ sudo apt install `pwd`/libssl1.0.0_1.0.1t-1+deb8u11_armhf.deb
 
 # install udhcpd
 sudo apt-get install udhcpd
+sudo sh -c "cp udhcpd.conf > /etc/default/"
 
 # For buster, unmask
 # https://github.com/raspberrypi/documentation/issues/1018
