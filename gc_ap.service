@@ -1,0 +1,19 @@
+[Unit]
+Description=Access Point by GC
+Wants=wvdial.target
+#Before=network.target
+After=wvdial.target
+
+[Service]
+Type=simple
+#Restart=always
+#RestartSec=30
+#PIDFile=/run/gc_ap.pid
+#EnvironmentFile=/home/pi/gc_modem/wvdial/wvdial.ini
+ExecStart=/bin/sh /home/pi/gc_ap/ap.sh
+#ExecReload=/bin/kill -s HUP $MAINPID
+#ExecStop=/bin/kill -s TERM $MAINPID
+#ExecStop=/bin/kill -s KILL $MAINPID
+
+[Install]
+WantedBy=multi-user.target
