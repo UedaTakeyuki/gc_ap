@@ -1,5 +1,8 @@
 # https://elinux.org/RPI-Wireless-Hotspot
 
+# install ifupdown
+sudo apt-get install ifupdown
+
 # install hostapd_mac80211
 sudo apt-get install hostapd
 sudo sh -c "cp hostapd.conf > /etc/hostapd/"
