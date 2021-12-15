@@ -2,6 +2,7 @@
 
 # install ifupdown
 sudo apt-get install ifupdown
+sudo sh -c "cp setting_files/gc /etc/network/interfaces.d/"
 
 # install hostapd_mac80211
 sudo apt-get install hostapd
