@@ -4,13 +4,16 @@ sudo ifup wlan0=ap
 
 # start hostapd
 # refer https://forums.raspberrypi.com/viewtopic.php?t=209818#p1334646
-sudo systemctl start hostapd
-sudo service hostapd stop
-sleep 5
-sudo service hostapd start
+sudo systemctl start hostapd.service
+sudo systemctl restart hostapd.service
+#sudo service hostapd stop
+#sleep 5
+#sudo service hostapd start
 
 # start udhcpd
-sudo systemctl start udhcpd
+sudo systemctl start udhcpd.service
+sudo systemctl restart udhcpd.service
+
 
 # allow ipv4 forwarding
 sudo sh -c "echo 1 > /proc/sys/net/ipv4/ip_forward"

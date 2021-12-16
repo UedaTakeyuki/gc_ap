@@ -17,7 +17,8 @@ sudo apt install `pwd`/libssl1.0.0_1.0.1t-1+deb8u11_armhf.deb
 
 # install udhcpd
 sudo apt-get install udhcpd
-sudo sh -c "cp setting_files/udhcpd.conf /etc/default/"
+sudo sed -i 's@DHCPD_ENABLED="no"@DHCPD_ENABLED="yes"@' /etc/default/udhcpd
+sudo sh -c "cp setting_files/udhcpd.conf /etc/"
 
 # For buster, unmask
 # https://github.com/raspberrypi/documentation/issues/1018
